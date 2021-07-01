@@ -1,6 +1,9 @@
 # compiled output
 /server/dist
 /server/node_modules
+/client/node_modules
+/client/.pnp
+/client/build
 
 # Logs
 /server/logs
@@ -17,6 +20,7 @@
 # Tests
 /server/coverage
 /server/.nyc_output
+/client/coverage
 
 # IDEs and editors
 .idea
@@ -33,3 +37,15 @@
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+
+# misc
+/client/.DS_Store
+/client/.env.local
+/client/.env.development.local
+/client/.env.test.local
+/client/.env.production.local
+/server/.env
+
+/client/npm-debug.log*
+/client/yarn-debug.log*
+/client/yarn-error.log*
