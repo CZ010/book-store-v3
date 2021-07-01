@@ -1,8 +1,15 @@
-import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
+import {NestFactory} from '@nestjs/core';
+import {AppModule} from './app.module';
+import {ValidationPipe} from '@nestjs/common';
 
-async function bootstrap() {
+const PORT = process.env.PORT || 5000;
+
+async function server(PORT) {
   const app = await NestFactory.create(AppModule);
-  await app.listen(3000);
+  app.enableCors();
+  app.useGlobalPipes(new ValidationPipe());
+  await app.listen(PORT);
+  return PORT;
 }
-bootstrap();
+
+server(PORT).then((PORT) => console.log(`SERVER STARTED ON PORT: ${PORT}`));
